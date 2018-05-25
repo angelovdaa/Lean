@@ -1109,13 +1109,37 @@ namespace QuantConnect.Tests
                 {"Total Fees", "$44.32"},
             };
 
+            var addRemoveOptionUniverseRegressionAlgorithm = new Dictionary<string, string>
+            {
+                {"Total Trades", "6"},
+                {"Average Win", "0%"},
+                {"Average Loss", "-0.21%"},
+                {"Compounding Annual Return", "-96.657%"},
+                {"Drawdown", "0.600%"},
+                {"Expectancy", "-1"},
+                {"Net Profit", "-0.626%"},
+                {"Sharpe Ratio", "0"},
+                {"Loss Rate", "100%"},
+                {"Win Rate", "0%"},
+                {"Profit-Loss Ratio", "0"},
+                {"Alpha", "0"},
+                {"Beta", "0"},
+                {"Annual Standard Deviation", "0"},
+                {"Annual Variance", "0"},
+                {"Information Ratio", "0"},
+                {"Tracking Error", "0"},
+                {"Treynor Ratio", "0"},
+                {"Total Fees", "$1.50"},
+            };
+
             return new List<AlgorithmStatisticsTestParameters>
             {
                 // CSharp
                 new AlgorithmStatisticsTestParameters("AddRemoveSecurityRegressionAlgorithm", addRemoveSecurityRegressionStatistics, Language.CSharp),
+                new AlgorithmStatisticsTestParameters("AddRemoveOptionUniverseRegressionAlgorithm", addRemoveOptionUniverseRegressionAlgorithm, Language.CSharp),
                 new AlgorithmStatisticsTestParameters("BasicTemplateAlgorithm", basicTemplateStatistics, Language.CSharp),
                 new AlgorithmStatisticsTestParameters("BasicTemplateFrameworkAlgorithm", basicTemplateFrameworkStatistics, Language.CSharp),
-                new AlgorithmStatisticsTestParameters("BasicTemplateOptionsAlgorithm", basicTemplateOptionsStatistics, Language.CSharp), 
+                new AlgorithmStatisticsTestParameters("BasicTemplateOptionsAlgorithm", basicTemplateOptionsStatistics, Language.CSharp),
                 new AlgorithmStatisticsTestParameters("CustomDataRegressionAlgorithm", customDataRegressionStatistics, Language.CSharp),
                 new AlgorithmStatisticsTestParameters("CompositeAlphaModelFrameworkAlgorithm", compositeAlphaModelFrameworkAlgorithmStatistics, Language.CSharp),
                 new AlgorithmStatisticsTestParameters("DropboxBaseDataUniverseSelectionAlgorithm", dropboxBaseDataUniverseSelectionStatistics, Language.CSharp),
@@ -1162,7 +1186,7 @@ namespace QuantConnect.Tests
                 new AlgorithmStatisticsTestParameters("AddRemoveSecurityRegressionAlgorithm", addRemoveSecurityRegressionStatistics, Language.Python),
                 new AlgorithmStatisticsTestParameters("BasicTemplateAlgorithm", basicTemplateStatistics, Language.Python),
                 new AlgorithmStatisticsTestParameters("BasicTemplateFrameworkAlgorithm", basicTemplateFrameworkStatistics, Language.Python),
-                new AlgorithmStatisticsTestParameters("BasicTemplateOptionsAlgorithm", basicTemplateOptionsStatistics, Language.Python), 
+                new AlgorithmStatisticsTestParameters("BasicTemplateOptionsAlgorithm", basicTemplateOptionsStatistics, Language.Python),
                 new AlgorithmStatisticsTestParameters("CustomDataRegressionAlgorithm", customDataRegressionStatistics, Language.Python),
                 new AlgorithmStatisticsTestParameters("CompositeAlphaModelFrameworkAlgorithm", compositeAlphaModelFrameworkAlgorithmStatistics, Language.Python),
                 new AlgorithmStatisticsTestParameters("DropboxBaseDataUniverseSelectionAlgorithm", dropboxBaseDataUniverseSelectionStatistics, Language.Python),

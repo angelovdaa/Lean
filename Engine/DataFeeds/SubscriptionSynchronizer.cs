@@ -145,6 +145,13 @@ namespace QuantConnect.Lean.Engine.DataFeeds
 
                                 universeData[subscription.Universe] = collection;
                             }
+
+                            // remove subscription for universe data if disposal requested AFTER time sync
+                            // this ensures we get any security changes from removing the universe and its children
+                            if (subscription.Universe.DisposeRequested)
+                            {
+                                OnSubscriptionFinished(subscription);
+                            }
                         }
                     }
 
