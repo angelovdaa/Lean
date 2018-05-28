@@ -160,6 +160,9 @@
       <HintPath>..\packages\QuantConnect.pythonnet.1.0.5.7\lib\Python.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ConvertToFrameworkAlgorithm.py" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent Condition="'$(OS)' == 'Windows_NT' ">
