@@ -104,6 +104,12 @@ namespace QuantConnect.Algorithm.Framework.Alphas
                     // create fast/slow EMAs
                     var fast = algorithm.EMA(added.Symbol, _fastPeriod, _resolution);
                     var slow = algorithm.EMA(added.Symbol, _slowPeriod, _resolution);
+                    var history = algorithm.History(added.Symbol, _slowPeriod, _resolution);
+                    foreach (var datum in history)
+                    {
+                        fast.Update(datum.EndTime, datum.Close);
+                        slow.Update(datum.EndTime, datum.Close);
+                    }
                     _symbolDataBySymbol[added.Symbol] = new SymbolData
                     {
                         Security = added,
